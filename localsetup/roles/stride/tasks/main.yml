@@ -1,0 +1,13 @@
+- name: add atlassian gpg key
+  apt_key:
+    url: https://packages.atlassian.com/api/gpg/key/public
+    keyring: /etc/apt/trusted.gpg.d/atlassian.gpg
+    state: present
+- name: add stride repository
+  apt_repository:
+    repo: deb https://packages.atlassian.com/debian/stride-apt-client $(lsb_release -c -s) main
+    state: present
+- name: install stride
+  apt:
+    name: stride
+    update_cache: yes

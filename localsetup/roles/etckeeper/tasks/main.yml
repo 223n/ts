@@ -1,0 +1,4 @@
+- name: install etckeeper
+  apt:
+    name: etckeeper
+    update_cache: yes
