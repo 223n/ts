@@ -5,9 +5,8 @@
     state: present
 - name: add stride repository
   apt_repository:
-    repo: deb https://packages.atlassian.com/debian/stride-apt-client $(lsb_release -c -s) main
+    repo: deb https://packages.atlassian.com/debian/stride-apt-client {{ ansible_distribution_release }} main
     state: present
 - name: install stride
   apt:
     name: stride
-    update_cache: yes

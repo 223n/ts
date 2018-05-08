@@ -1,8 +1,7 @@
 - name: add slack repository
   apt_repository:
-    repo: deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
+    repo: deb https://packagecloud.io/slacktechnologies/slack/debian/ {{ ansible_distribution_release }} main
     state: present
 - name: install slack
   apt:
     name: slack
-    update_cache: yes
