@@ -1,5 +1,9 @@
 - hosts: targets
   user: root
+  pre_tasks:
+    - name: update cache
+      apt:
+        update_cache: yes
   roles:
     - etckeeper
     - git

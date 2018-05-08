@@ -10,4 +10,3 @@
 - name: install vscode
   apt:
     name: code
-    update_cache: yes
