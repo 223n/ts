@@ -1,0 +1,13 @@
+language: python
+sudo: true
+python:
+  - "2.7"
+install:
+  - pip install ansible
+before_script:
+  - ansible --version
+  - sh ./localsetup/roles/test/before_script.sh
+script:
+  - ansible-playbook --syntax-check ./localsetup/roles/test/travis-ci.yml -i ./localsetup/roles/test/hosts
+  - ansible-playbook ./localsetup/roles/test/travis-ci.yml -i ./localsetup/roles/test/hosts
+  - sh ./localsetup/roles/test/test.sh
