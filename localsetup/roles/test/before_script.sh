@@ -1,15 +1,19 @@
-#!/bin/sh
+#!/bin/bash
 
 COPY_FROM="./localsetup/roles"
 WORK_DIR="./localsetup/roles/test"
-roles=(
+
+declare -a roles=()
+declare -a roles=(
   "etckeeper"
   "git"
   "gnucash"
   "stride"
   "vscode"
 )
-dirs=(
+
+declare -a dirs=()
+declare -a dirs=(
   "defaults"
   "handler"
   "meta"
