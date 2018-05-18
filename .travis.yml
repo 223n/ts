@@ -3,8 +3,12 @@ sudo: true
 python:
   - "2.7"
 install:
+  - python --version
+  - pip --version
+  - sudo python --version
+  - sudo pip --version
   - pip install ansible
-  - sudo apt-get install python-apt -y
+  - sudo apt-get install python-apt
   - python -m pip install python-apt
 before_script:
   - ansible --version
