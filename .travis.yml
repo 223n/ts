@@ -7,6 +7,7 @@ install:
   - pip --version
   - sudo python --version
   - sudo pip --version
+  - pip install --upgrade pip
   - pip install ansible
   - sudo apt-get install python-apt
   - python -m pip install python-apt
