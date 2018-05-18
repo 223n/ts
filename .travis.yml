@@ -1,16 +1,16 @@
 language: python
 sudo: true
 python:
-  - "2.7.6"
+  - "2.7"
 install:
+  - pip install --upgrade all
   - python --version
   - pip --version
   - sudo python --version
   - sudo pip --version
-  - pip install --upgrade pip
-  - pip install ansible
-  - sudo apt-get install python-apt
+  - sudo apt-get upgrade
   - python -m pip install python-apt
+  - pip install ansible
 before_script:
   - ansible --version
   - bash -x ./localsetup/roles/test/before_script.sh
