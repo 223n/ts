@@ -3,7 +3,8 @@ sudo: true
 python:
   - "2.7"
 install:
-  - pip install --upgrade all
+  - pip install pip-review
+  - pip-review --auto
   - python --version
   - pip --version
   - sudo python --version
