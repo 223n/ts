@@ -2,12 +2,9 @@ language: python
 sudo: true
 python:
   - "2.7"
-addons:
-  apt:
-    packages:
-    - python-apt
 install:
   - pip install ansible
+  - sudo apt-get install python-apt -y
   - pip install python-apt
 before_script:
   - ansible --version
