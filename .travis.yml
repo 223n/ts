@@ -5,7 +5,7 @@ python:
 install:
   - pip install ansible
   - sudo apt-get install python-apt -y
-  - sudo python -m pip install python-apt
+  - python -m pip install python-apt
 before_script:
   - ansible --version
   - bash -x ./localsetup/roles/test/before_script.sh
