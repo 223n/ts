@@ -9,7 +9,7 @@ install:
   - pip --version
   - sudo python --version
   - sudo pip --version
-  - sudo apt-get install python-apt
+  - sudo apt-get install python-apt python-distutils-extra
   - python -m pip install python-apt
   - pip install ansible
 before_script:
