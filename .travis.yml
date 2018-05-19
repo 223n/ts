@@ -9,8 +9,8 @@ install:
   - pip --version
   - sudo python --version
   - sudo pip --version
-  - sudo apt-get upgrade
-  - python -m pip install python-apt
+  - sudo upgrade -y python-apt
+  - pip install python-apt
   - pip install ansible
 before_script:
   - ansible --version
