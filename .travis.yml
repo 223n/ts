@@ -1,21 +1,10 @@
 language: python
 sudo: true
 python:
-  - "3.6"
+  - "2.7"
 install:
-  - pip install pip-review
-  - pip-review --auto
-  - python --version
-  - pip --version
-  - sudo python --version
-  - sudo pip --version
-  - sudo apt-get install python-apt python-distutils-extra
-  - python -m pip install python-apt
   - pip install ansible
 before_script:
   - ansible --version
-  - bash -x ./localsetup/roles/test/before_script.sh
 script:
-  - ansible-playbook --syntax-check ./localsetup/roles/test/travis-ci.yml -i ./localsetup/roles/test/hosts
-  - ansible-playbook ./localsetup/roles/test/travis-ci.yml -i ./localsetup/roles/test/hosts
-  - bash -x ./localsetup/roles/test/test.sh
+  - ansible-playbook ./localsetup/roles/test/travis-ci.yml -i ./localsetup/roles/test/hosts --syntax-check
