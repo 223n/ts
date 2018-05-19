@@ -11,5 +11,6 @@ install:
 before_script:
   - ansible --version
   - printf '[defaults]\nroles_path=../localsetup/' > ./localsetup/ansible.cfg
+  - cat ./localsetup/ansible.cfg
 script:
   - ansible-playbook ./localsetup/tests/test.yml -i ./localsetup/tests/inventory --syntax-check
