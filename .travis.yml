@@ -10,7 +10,7 @@ install:
   - sudo python --version
   - sudo pip --version
   - sudo apt-get install python-apt
-  - pip install python-apt
+  - python -m pip install python-apt
   - pip install ansible
 before_script:
   - ansible --version
