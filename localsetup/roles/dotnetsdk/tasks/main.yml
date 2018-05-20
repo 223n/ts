@@ -1,0 +1,12 @@
+- name: add microsoft gpg key
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    keyring: /etc/apt/trusted.gpg.d/microsoft.asc.gpg
+    state: present
+- name: add dotnet sdk repository
+  apt_repository:
+    repo: deb [arch=amd64] https://packages.microsoft.com/debian/9/prod {{ ansible_distribution_release }} main
+    state: present
+- name: install dotnet sdk
+  apt:
+    name: dotnet-sdk-2.1.200
