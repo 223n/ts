@@ -16,7 +16,7 @@
 
 - name: add docker repository
   apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_distribution_release }} stable
+    repo: deb [arch=amd64] https://download.docker.com/{{ ansible_system | lower }}/{{ ansible_os_family | lower }} {{ ansible_distribution_release | lower }} stable
     state: present
 
 - name: install docker-ce
@@ -25,6 +25,6 @@
 
 - name: download docker-compose
   get_url:
-    url: https://github.com/docker/compose/releases/download/1.21.2/docker-compose-Linux-x86_64
+    url: https://github.com/docker/compose/releases/download/1.21.2/docker-compose-{{ ansible_system }}-{{ ansible_userspace_architecture }}
     dest: /usr/local/bin/docker-compose
     mode: 0777

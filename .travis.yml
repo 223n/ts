@@ -12,3 +12,4 @@ before_script:
   - ansible --version
 script:
   - ansible-playbook ./localsetup/playbook.yml -i ./localsetup/inventory --syntax-check
+  - ansible-playbook ./localsetup/docker-playbook.yml -i ./localsetup/inventory --syntax-check
