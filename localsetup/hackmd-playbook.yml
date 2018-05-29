@@ -1,0 +1,11 @@
+- hosts: targets
+  connection: local
+  user: root
+  pre_tasks:
+    - name: update cache and cleanup package
+      apt:
+        update_cache: yes
+        autoremove: yes
+  roles:
+    - docker
+    - hackmd
