@@ -11,7 +11,7 @@ echo "${deb_setting}" >${source_path}
 
 echo "2. add key"
 apt-get install -y dirmngr
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 93C4A3FD7BB9C367
 
 echo "3. apt-get update"
 apt-get update
