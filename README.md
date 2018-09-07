@@ -19,3 +19,35 @@ sudo ./ansible_setup.sh
 cd ./ts/localsetup
 sudo ansible-playbook -i inventory hackmd-playbook.yml
 ```
+
+3. Run HackMD
+
+```shell
+cd /docker/hackmd
+sudo docker-compose up
+```
+
+or
+
+```shell
+cd /docker/hackmd
+sudo docker-compose up -d
+```
+
+4. Backup HackMD
+
+Ref. https://github.com/hackmdio/docker-hackmd#backup
+
+```shell
+cd /docker/hackmd
+sudo docker-compose exec database pg_dump hackmd -U hackmd > /tmp/backup.sql
+```
+
+5. Restore HackMD
+
+Ref. https://github.com/hackmdio/docker-hackmd#restore
+
+```shell
+cd /docker/hackmd
+cat /tmp/backup.sql | sudo docker exec -i $(sudo docker-compose ps -q database) psql -U hackmd
+```
