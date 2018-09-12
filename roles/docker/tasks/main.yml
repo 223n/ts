@@ -29,7 +29,7 @@
     dest: /usr/local/bin/docker-compose
     mode: 0777
 
-- name: Export DOCKER_HOST
-  shell: echo $DOCKER_HOST
-  environment:
-    DOCKER_HOST: "tcp://127.0.0.1:8080"
+#- name: Export DOCKER_HOST
+#  shell: echo $DOCKER_HOST
+#  environment:
+#    DOCKER_HOST: "tcp://127.0.0.1:8080"
