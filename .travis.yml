@@ -7,10 +7,8 @@ addons:
     packages:
       - python-pip
 install:
-  - pip install ansible
+  - pip install -r ./requirements.txt
 before_script:
   - ansible --version
 script:
-  - ansible-playbook ./localsetup/playbook.yml -i ./localsetup/inventory --syntax-check
-  - ansible-playbook ./localsetup/docker-playbook.yml -i ./localsetup/inventory --syntax-check
-  - ansible-playbook ./localsetup/hackmd-playbook.yml -i ./localsetup/inventory --syntax-check
+  - ansible-lint *playbook.yml
